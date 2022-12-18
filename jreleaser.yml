@@ -17,6 +17,11 @@ signing:
   active: ALWAYS
   armored: true
 
+files:
+  globs:
+    - pattern: target/staging-deploy/**/*.jar
+    - pattern: target/staging-deploy/**/*.pom
+
 deploy:
   maven:
     nexus2:
@@ -25,6 +30,6 @@ deploy:
         url: https://s01.oss.sonatype.org/service/local
         closeRepository: false
         releaseRepository: false
-        applyMavenCentralRules: true
+        applyMavenCentralRules: false
         stagingRepositories:
           - target/staging-deploy
