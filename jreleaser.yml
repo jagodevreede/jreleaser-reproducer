@@ -1,0 +1,30 @@
+project:
+  name: jreleaser-reproducer
+  version: 0.0.1
+  description: This is the jreleaser-reproducer
+  longDescription: This is the jreleaser-reproducer
+  authors:
+    - Jago de Vreede
+  license: Apache-2.0
+  links:
+    homepage: https://github.com/jagodevreede/jreleaser-reproducer
+  java:
+    groupId: io.github.jagodevreede
+    version: 11
+  inceptionYear: 2022
+
+signing:
+  active: ALWAYS
+  armored: true
+
+deploy:
+  maven:
+    nexus2:
+      maven-central:
+        active: ALWAYS
+        url: https://s01.oss.sonatype.org/service/local
+        closeRepository: false
+        releaseRepository: false
+        applyMavenCentralRules: true
+        stagingRepositories:
+          - target/staging-deploy
